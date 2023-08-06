@@ -1,0 +1,91 @@
+<div *ngIf="!hasAccess; then login else member"></div>
+<ng-template #login>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center" style="color:white">
+                    <h1>Login</h1>
+                    <h6>Please enter sample email/password (firebase authentication only allows the following)</h6>
+                    <h6>Email/Password: test@test.com/test123</h6>
+                </div>
+                <form #f="ngForm">
+                    <div class="mb-3">
+                        <label class="form-label"> Email Address </label>
+                        <input type="email" class="form-control" ngModel name="email" email="ngModel">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"> Password </label>
+                        <input type="password" class="form-control" ngModel name="password" #password="ngModel">
+                    </div>
+                    <button type="submit" class="btn btn-primary" (click)="onLogin(f.value)">Login</button>
+                    <div style="color:white"> {{message}} </div>    <!-- white not working-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</ng-template>
+<ng-template #member>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center" style="color:white">
+                    <h1>Welcome Back, Hockey Monkey Admin!</h1>
+                    <h6>Email: {{user?.email}}</h6>
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="onLogout()">Logout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="outline">
+    <form #f ="ngForm"class="myForm" (ngSubmit)="onSubmit(f.value)">
+    <h1 class="mydiv">Add a New Product</h1>
+    <div class="form-group">
+        <div class="form-floating mydiv">
+            <input ngModel name = "productName" #PRODUCTNAME="ngModel" 
+            type="text" class="form-control" 
+            id="floatingInput" placeholder="Product Name"
+            required
+            minlength="2"
+            pattern="^[a-zA-Z]+">
+            <label for="floatingInput">First Name</label>
+        </div>
+        <div class="form-floating mydiv">
+            <input ngModel name = "productPrice" #PRODUCTPRICE="ngModel" 
+            type="text" class="form-control" 
+            id="floatingInput1" placeholder="Product Price"
+            required>
+            <label for="floatingInput1">Price</label>
+        </div>
+        <div class="form-floating mydiv">
+            <input ngModel name = "productDescription" #PRODUCTDESCRIPTION="ngModel" 
+            type="text" class="form-control" 
+            id="floatingInput2" placeholder="Product Description"
+            required
+            minlength="10"
+            pattern="^[a-zA-Z]+">
+            <label for="floatingInput2">Description</label>
+        </div>
+   
+        <button type="submit" class="btn btn-primary" (click)="onSubmit(f.value)">Add Product</button>
+        <div style="color:black"> {{added}}</div>
+    </div>
+    </form>
+</div>  
+
+<h1>Orders to Fulfill</h1>
+<app-orders></app-orders>
+
+</ng-template>
+<br><br><br><br>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

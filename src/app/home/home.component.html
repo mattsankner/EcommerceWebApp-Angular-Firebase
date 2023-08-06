@@ -1,0 +1,77 @@
+<div class="bg-lightgray text-black py-3">
+    <div class="container">
+      <h1 class="text-center">Welcome to Hockey Monkey!</h1>
+      <p></p>
+      <p></p>
+      <p class="text-center" style="font-size: 18px;">Your one-stop shop for all things hockey. Explore our wide range of products and get geared up for the ice!</p>
+      <p class="text-center" style="font-size:18px;">This sample web app uses the Angular Framework, Firebase Realtime Database/Hosting, and RxJS for managing asyncronous operations.</p>
+      <p class="text-center" style="font-size:18px;">Feel free to build and place an order, login as an admin, view previous orders, and add a product to the home page that you can order!</p>
+      <p class="text-center" style="font-size:16px;">Built by Matt Sankner</p>
+    </div>
+  </div>
+  
+  <div class="text-center mt-5">
+    <button class="btn btn-outline-success" routerLink="/cart">Go to Cart</button>
+  </div>
+  
+  <div class="container my-5">
+    <div class="row">
+      <div *ngFor="let product of items | async" class="col-lg-4 mb-4">
+        <div class="card">
+          <div class="price">{{product.price}}</div>
+            <ng-container *ngIf="product.rating <1;else elseBlock1">
+              <i (click)="onClick(1, product.key)" class="bi bi-star"></i>
+            </ng-container>
+            <ng-template #elseBlock1>
+              <i (click)="onClick(1, product.key)" class="bi bi-star-fill"></i>
+            </ng-template>
+            <ng-container *ngIf="product.rating <2;else elseBlock2">
+              <i (click)="onClick(2, product.key)" class="bi bi-star"></i>
+            </ng-container>
+            <ng-template #elseBlock2>
+              <i (click)="onClick(2, product.key)" class="bi bi-star-fill"></i>
+            </ng-template>
+            <ng-container *ngIf="product.rating <3; else elseBlock3">
+              <i (click)="onClick(3, product.key)" class="bi bi-star"></i>
+            </ng-container>
+            <ng-template #elseBlock3>
+              <i (click)="onClick(3, product.key)" class="bi bi-star-fill"></i>
+            </ng-template>
+            <ng-container *ngIf="product.rating <4;else elseBlock4">
+              <i (click)="onClick(4, product.key)" class="bi bi-star"></i>
+            </ng-container>
+            <ng-template #elseBlock4>
+              <i (click)="onClick(4, product.key)" class="bi bi-star-fill"></i>
+            </ng-template>
+            <ng-container *ngIf="product.rating <5;else elseBlock5">
+              <i (click)="onClick(5, product.key)" class="bi bi-star"></i>
+            </ng-container>
+            <ng-template #elseBlock5>
+              <i (click)="onClick(5, product.key)" class="bi bi-star-fill"></i>
+            </ng-template>
+
+
+          <img [src]="product.image" class="card-img-top" style="height: 50%;">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text" style="height: 150px;overflow: auto">{{ product.description }}</p>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-primary btn-block"
+                (click)="addToCart(product)"
+                [disabled]="product.isAdded">Add to Cart</button>
+              <div *ngIf="success[product.key]" class="alert alert-success" role="alert"> 
+                {{product.name}} is Added!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+  
+  
+  
+  

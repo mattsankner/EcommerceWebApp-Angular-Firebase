@@ -1,0 +1,41 @@
+.mydiv{
+    padding-bottom: 15px;
+    /* align center */
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.mydivheader{
+    padding-bottom: 15px;
+    /* align center */
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.danger{
+    background-color: red;
+    color: darkred;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.outline{
+    border: 1px solid black;
+    width: 40%;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border-radius: 10%;
+}
+
+.mybutton{
+    /* align center */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%;
+    width: 100%;
+}

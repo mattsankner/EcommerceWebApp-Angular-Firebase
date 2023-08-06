@@ -1,0 +1,8 @@
+@import "~bootstrap/dist/CSS/bootstrap.css";
+
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.mylogo {
+    height: 50px; /* set the height of the image */
+    width: auto; /* set the width of the image to adjust automatically based on the height */
+  }

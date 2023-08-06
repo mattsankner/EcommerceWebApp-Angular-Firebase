@@ -1,0 +1,319 @@
+<div>
+    <form #f ="ngForm"class="myForm" (ngSubmit)="onSubmit(f.value)">
+    <h1 class="text-center mydiv"> Registration Form</h1>
+        <div class="row">
+            <div class="outline col-md-6">
+                <h2 class="mydivheader">Shipping Address</h2>
+                <div class="form-group">
+                    <div class="mydiv form-floating">
+                        <input type="text" class="form-control" id="shippingFirstName" placeholder="First Name" 
+                        name="shippingFirstName" [(ngModel)]="firstName"
+                        required minlength="2" pattern="^[a-zA-Z]+">
+                        <label for="floatingInput">First Name</label>
+                    </div>
+                        <div class="alert alert-danger mydiv danger"
+                            *ngIf="f.controls['shippingFirstName']?.invalid && f.controls['shippingFirstName'].touched">
+                            <div *ngIf="f.controls['shippingFirstName'].errors?.['required']">
+                                First Name is required.
+                            </div>
+                            <div *ngIf="f.controls['shippingFirstName'].errors?.['minlength']">
+                                First Name must be at least 2 characters.
+                            </div>
+                            <div *ngIf="f.controls['shippingFirstName'].errors?.['pattern']">
+                                First Name must contain only letters.
+                            </div>  
+                        </div>
+                    <div class="mydiv form-floating">
+                        <input type="text" class="form-control" id="shippingLastName" placeholder="Last Name" 
+                        name="shippingLastName" [(ngModel)]="lastName" required
+                        required minlength="2" pattern="^[a-zA-Z]+">
+                        <label for="floatingInput">Last Name</label>
+                    </div>
+                        <div class="alert alert-danger mydiv danger"
+                            *ngIf="f.controls['shippingLastName']?.invalid && f.controls['shippingLastName'].touched">
+                            <div *ngIf="f.controls['shippingLastName'].errors?.['required']">
+                                Last Name is required.
+                            </div>
+                            <div *ngIf="f.controls['shippingLastName'].errors?.['minlength']">
+                                Last Name must be at least 2 characters.
+                            </div>
+                            <div *ngIf="f.controls['shippingLastName'].errors?.['pattern']">
+                                Last Name must contain only letters.
+                            </div>  
+                        </div>
+                    <div class="mydiv form-floating">
+                        <input type="text" class="form-control" id="streetAddress" placeholder="Street Address" 
+                        name="streetaddress" [(ngModel)]="streetAddress" required
+                        required minlength="2" pattern="^[a-zA-Z]+">
+                        <label for="floatingInput">Street Address</label>
+                    </div>
+                        <div class="alert alert-danger mydiv danger"
+                            *ngIf="f.controls['streetaddress']?.invalid && f.controls['streetaddress'].touched">
+                            <div *ngIf="f.controls['streetaddress'].errors?.['required']">
+                                Street Address is required.
+                            </div>
+                            <div *ngIf="f.controls['streetaddress'].errors?.['minlength']">
+                                Street Address must be at least 2 characters.
+                            </div>
+                        </div>
+                    
+                    <div class="mydiv form-floating">
+                        <input type="text" class="form-control" id="suite" placeholder="Suite"
+                        name="suite" [(ngModel)]="Suite" required
+                        required minlength="2" pattern="^[a-zA-Z]+">
+                        <label for="floatingInput">Apt, Suite, Building</label>
+                    </div>
+                        <div class="alert alert-danger mydiv danger"
+                            *ngIf="f.controls['suite']?.invalid && f.controls['suite'].touched">
+                            <div *ngIf="f.controls['suite'].errors?.['required']">
+                                Apt, Suite, Building is required.
+                            </div>
+                            <div *ngIf="f.controls['suite'].errors?.['minlength']">
+                                Apt, Suite, Building must be at least 2 characters.
+                            </div>
+                            <div *ngIf="f.controls['suite'].errors?.['pattern']">
+                                Apt, Suite, Building must contain only letters.
+                            </div> 
+                        </div>
+                    <div class="mydiv form-floating">
+                        <input type="number" class="form-control" id="zipCode" placeholder="Zip Code"
+                        name="zipcode" [(ngModel)]="zipCode" required
+                        required minlength="5" maxlength = "5" pattern="^[0-9]+$">
+                        <label for="floatingInput">Zip Code</label>
+                    </div> 
+                        <div class="alert alert-danger mydiv danger"
+                            *ngIf="f.controls['zipcode']?.invalid && f.controls['zipcode'].touched">
+                            <div *ngIf="f.controls['zipcode'].errors?.['required']">
+                                Zip Code is required.
+                            </div>
+                            <div *ngIf="f.controls['zipcode'].errors?.['minlength']">
+                                Zip must be at least 5 numbers.
+                            </div>
+                            <div *ngIf="f.controls['zipcode'].errors?.['pattern']">
+                                Zip Code must contain only numbers.
+                            </div>
+                            <div *ngIf="f.controls['zipcode'].errors?.['maxlength']">
+                                Zip Code must contain only 5 numbers.
+                            </div>
+                            <div *ngIf="f.controls['zipcode'].errors?.['pattern']">
+                                Zip Code must contain only numbers.
+                            </div> 
+                        </div>
+        
+                    <div class="mydiv form-floating">
+                        <input type="text" class="form-control" id="city" placeholder="City"
+                        name="city" [(ngModel)]="City" required
+                        required minlength="2" pattern="^[a-zA-Z]+">
+                        <label for="floatingInput">City</label>
+                    </div>
+                        <div class="alert alert-danger mydiv danger"
+                        *ngIf="f.controls['city']?.invalid && f.controls['city'].touched">
+                            <div *ngIf="f.controls['city'].errors?.['required']">
+                                City is required.
+                            </div>
+                            <div *ngIf="f.controls['city'].errors?.['minlength']">
+                                City must be at least 2 characters.
+                            </div>
+                            <div *ngIf="f.controls['city'].errors?.['pattern']">
+                                City must contain only letters.
+                            </div> 
+                        </div>
+                    <div class=" mydiv form-floating">
+                        <input type="text" class="form-control" id="state" placeholder="State"
+                        name="state" [(ngModel)]="State" required
+                        required minlength="2" pattern="^[a-zA-Z]+">
+                        <label for="floatingInput">State</label>
+                    </div> 
+                        <div class="alert alert-danger mydiv danger"
+                        *ngIf="f.controls['state']?.invalid && f.controls['state'].touched">
+                            <div *ngIf="f.controls['state'].errors?.['required']">
+                                State is required.
+                            </div>
+                            <div *ngIf="f.controls['state'].errors?.['minlength']">
+                                State must be at least 2 characters.
+                            </div>
+                            <div *ngIf="f.controls['state'].errors?.['pattern']">
+                                State must contain only letters.
+                            </div> 
+                        </div>
+                        
+                    <div class=" mydiv form-floating">
+                        <input type="text" class="form-control" id="country" placeholder="Country"
+                        name="country" [(ngModel)]="Country" required
+                        required minlength="2" pattern="^[a-zA-Z]+">
+                        <label for="floatingInput">Country</label>
+                    </div> 
+                        <div class="alert alert-danger mydiv danger"
+                        *ngIf="f.controls['country']?.invalid && f.controls['country'].touched">
+                            <div *ngIf="f.controls['country'].errors?.['required']">
+                                Country is required.
+                            </div>
+                            <div *ngIf="f.controls['country'].errors?.['minlength']">
+                                Country must be at least 2 characters.
+                            </div>
+                            <div *ngIf="f.controls['country'].errors?.['pattern']">
+                                Country must contain only letters.
+                            </div> 
+                        </div>
+                </div>
+                <div>
+                    <div *ngIf="orderPlaced"> ORDER PLACED! </div>
+                    <ng-container *ngIf="changebutton; else elseBlock">
+                      <button class="mybutton btn btn-primary" [disabled]="!f.controls.hasOwnProperty('shippingFirstName') || !f.controls['shippingFirstName'].value || !f.controls['shippingFirstName'].valid 
+                                          || !f.controls.hasOwnProperty('shippingLastName') || !f.controls['shippingLastName'].value || !f.controls['shippingLastName'].valid 
+                                          || !f.controls.hasOwnProperty('zipcode') || !f.controls['zipcode'].value || !f.controls['zipcode'].valid 
+                                          || !f.controls.hasOwnProperty('city') || !f.controls['city'].value || !f.controls['city'].valid 
+                                          || !f.controls.hasOwnProperty('state') || !f.controls['state'].value || !f.controls['state'].valid"
+                                          (click)="onSubmit(f.value)" routerLink="/">Place Your Order (${{ getprice() }})</button>
+                    </ng-container>
+                    <ng-template #elseBlock>
+                      <button class="mybutton btn btn-primary" [disabled]="!f.controls.hasOwnProperty('shippingFirstName') || !f.controls['shippingFirstName'].value || !f.controls['shippingFirstName'].valid 
+                                          || !f.controls.hasOwnProperty('shippingLastName') || !f.controls['shippingLastName'].value || !f.controls['shippingLastName'].valid 
+                                          || !f.controls.hasOwnProperty('zipcode') || !f.controls['zipcode'].value || !f.controls['zipcode'].valid 
+                                          || !f.controls.hasOwnProperty('city') || !f.controls['city'].value || !f.controls['city'].valid 
+                                          || !f.controls.hasOwnProperty('state') || !f.controls['state'].value || !f.controls['state'].valid 
+                                          || !f.controls.hasOwnProperty('firstNameBilling') || !f.controls['firstNameBilling'].value || !f.controls['firstNameBilling'].valid 
+                                          || !f.controls.hasOwnProperty('lastNameBilling') || !f.controls['lastNameBilling'].value || !f.controls['lastNameBilling'].valid 
+                                          || !f.controls.hasOwnProperty('zipCodeBilling') || !f.controls['zipCodeBilling'].value || !f.controls['zipCodeBilling'].valid 
+                                          || !f.controls.hasOwnProperty('CityBilling') || !f.controls['CityBilling'].value || !f.controls['CityBilling'].valid 
+                                          || !f.controls.hasOwnProperty('StateBilling') || !f.controls['StateBilling'].value || !f.controls['StateBilling'].valid"
+                                          (click)="onSubmit(f.value)" routerLink="/">Place Your Order (${{ getprice() }})</button>
+                    </ng-template>
+                  </div>
+                  
+                  
+            </div>
+            <div class=" outline col-md-6">
+                <div>
+                    <h2 class="mydivheader">Billing Address</h2>
+                    <div class="mydiv form-check">
+                        <input class="form-check-input" type="checkbox" id="useShippingAddress"  (change)="onBillingCheckboxChange($event)">
+                        <label class="form-check-label" for="useShippingAddress"> Use My Shipping Address</label>
+                    </div>
+                </div>
+                <div class="form-group" >
+                    <div class="mydiv form-floating">
+                        <input type="text" class="form-control" id="billingFirstName" placeholder="First Name" 
+                        name="firstNameBilling" [(ngModel)]="firstNameBilling" required
+                        [disabled]="useShippingAddress" 
+                        required minlength="2" pattern="^[a-zA-Z]+">
+                        <label for="floatingInput">First Name</label>
+                    </div>
+                        <div class="alert alert-danger mydiv danger"
+                            *ngIf="f.controls['firstNameBilling']?.invalid && f.controls['firstNameBilling'].touched">
+                            <div *ngIf="f.controls['firstNameBilling'].errors?.['required']">
+                                First Name is required.
+                            </div>
+                            <div *ngIf="f.controls['firstNameBilling'].errors?.['minlength']">
+                                First Name must be at least 2 characters.
+                            </div>
+                            <div *ngIf="f.controls['firstNameBilling'].errors?.['pattern']">
+                                First Name must contain only letters.
+                            </div>  
+                        </div>
+                    <div class="mydiv form-floating">
+                        <input type="text" class="form-control" id="billingLastName" placeholder="Last Name" 
+                        name="lastNameBilling" [(ngModel)]="lastNameBilling" required
+                        required minlength="2" pattern="^[a-zA-Z]+"
+                        [disabled]="useShippingAddress">
+                        <label for="floatingInput">Last Name</label>
+                    </div>
+                        <div class="alert alert-danger mydiv danger"
+                            *ngIf="f.controls['lastNameBilling']?.invalid && f.controls['lastNameBilling'].touched">
+                            <div *ngIf="f.controls['lastNameBilling'].errors?.['required']">
+                                Last Name is required.
+                            </div>
+                            <div *ngIf="f.controls['lastNameBilling'].errors?.['minlength']">
+                                Last Name must be at least 2 characters.
+                            </div>
+                            <div *ngIf="f.controls['lastNameBilling'].errors?.['pattern']">
+                                Last Name must contain only letters.
+                            </div>  
+                        </div>
+                    <div class="mydiv form-floating">
+                        <input type="text" class="form-control" id="streetAddress" placeholder="Street Address" 
+                        name="streetAddressBilling" [(ngModel)]="streetAddressBilling" required
+                        required minlength="2" pattern="^[a-zA-Z]+"
+                        [disabled]="useShippingAddress">
+                        <label for="floatingInput">Street Address</label>
+                    </div>
+                    <div class=" mydiv form-floating">
+                        <input type="text" class="form-control" id="suite" placeholder="Suite"
+                        name="suiteBilling" [(ngModel)]="suiteBilling" required
+                        required minlength="2" pattern="^[a-zA-Z]+"
+                        [disabled]="useShippingAddress">
+                        <label for="floatingInput">Apt, Suite, Building (Optional)</label>
+                    </div>
+                    <div class=" mydiv form-floating">
+                        <input type="number" class="form-control" id="zipCode" placeholder="Zip Code"
+                        name="zipCodeBilling" [(ngModel)]="zipCodeBilling"
+                        required minlength="5" pattern="^^[0-9]+$"
+                        [disabled]="useShippingAddress">
+                        <label for="floatingInput">Zip Code</label>
+                    </div> 
+                        <div class="alert alert-danger mydiv danger"
+                            *ngIf="f.controls['zipCodeBilling']?.invalid && f.controls['zipCodeBilling'].touched">
+                            <div *ngIf="f.controls['zipCodeBilling'].errors?.['required']">
+                                Zip Code is required.
+                            </div>
+                            <div *ngIf="f.controls['zipCodeBilling'].errors?.['minlength']">
+                                Zip must be at least 5 numbers.
+                            </div>
+                            <div *ngIf="f.controls['zipCodeBilling'].errors?.['pattern']">
+                                Zip Code must contain only numbers.
+                            </div> 
+                        </div>
+                    <div class=" mydiv form-floating">
+                        <input type="text" class="form-control" id="city" placeholder="City"
+                        name="CityBilling" [(ngModel)]="CityBilling" required
+                        required minlength="2" pattern="^[a-zA-Z]+"
+                        [disabled]="useShippingAddress">
+                        <label for="floatingInput">City</label>
+                    </div>
+                    <div class="alert alert-danger mydiv danger"
+                        *ngIf="f.controls['CityBilling']?.invalid && f.controls['CityBilling'].touched">
+                            <div *ngIf="f.controls['CityBilling'].errors?.['required']">
+                                City is required.
+                            </div>
+                            <div *ngIf="f.controls['CityBilling'].errors?.['minlength']">
+                                City must be at least 2 characters.
+                            </div>
+                            <div *ngIf="f.controls['CityBilling'].errors?.['pattern']">
+                                City must contain only letters.
+                            </div> 
+                    </div>
+                    <div class=" mydiv form-floating">
+                        <input type="text" class="form-control" id="state" placeholder="State"
+                        name="StateBilling" [(ngModel)]="StateBilling" required
+                        required minlength="2" pattern="^[a-zA-Z]+"
+                        [disabled]="useShippingAddress">
+
+                        <label for="floatingInput">State</label>
+                    </div>
+                        <div class="alert alert-danger mydiv danger"
+                        *ngIf="f.controls['StateBilling']?.invalid && f.controls['StateBilling'].touched">
+                                <div *ngIf="f.controls['StateBilling'].errors?.['required']">
+                                    State is required.
+                                </div>
+                                <div *ngIf="f.controls['StateBilling'].errors?.['minlength']">
+                                    State must be at least 2 characters.
+                                </div>
+                                <div *ngIf="f.controls['StateBilling'].errors?.['pattern']">
+                                    State must contain only letters.
+                                </div> 
+                        </div>
+                    <div class=" mydiv form-floating">
+                        <input type="text" class="form-control" id="country" placeholder="Country"
+                        name="CountryBilling" [(ngModel)]="CountryBilling" required
+                        required minlength="2" pattern="^[a-zA-Z]+"
+                        [disabled]="useShippingAddress">
+                        <label for="floatingInput">Country</label>
+                    </div>
+            </div>
+         </div>
+    </div>
+    <br><br><br><br><br>
+<app-footer></app-footer>
+
+
+   

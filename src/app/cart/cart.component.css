@@ -1,0 +1,14 @@
+.imgresize{
+    width: 20%;
+    height: 20%;
+}
+.separateButton{
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+.emptyspace{
+    height: 240px;
+}
+
+

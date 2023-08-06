@@ -1,0 +1,62 @@
+    <div class="container px-3 my-5 clearfix">
+        <!-- Shopping cart table -->
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-8 text-center">
+                        <h2>Shopping Cart ({{totalQuantity}})</h2>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <h2>Total: ${{newPrice}}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class=" separateButton text-center mt-5 ">
+                <button type="button" class="btn btn-primary" routerLink="/">Continue Shopping</button>
+                <button type="button" class="btn btn-danger" (click)="clearCart()">Clear Cart</button>
+                <button type="button" class="btn btn-success" routerLink="/checkout">Checkout</button>
+                <hr>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                <table class="table m-0">
+                    <tbody> 
+                        <!-- implement for loop-->
+                            <tr *ngFor="let product of items | async">
+                            <!--   <div *ngIf="!product.removed"> -->
+                                <td class="p-4">
+                                    <div class="media align-items-center">
+                                    <img src="{{product.image}}" class="d-block ui-w-40 ui-bordered mr-4 imgresize" alt="">
+                                    <div class="media-body">
+                                        <div class="d-flex flex-column">
+                                        <a href="#" class="d-block text-dark">{{product.name}}</a>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </td>
+                                <td class="text-right font-weight-semibold align-middle p-4">{{product.price}}</td>
+                                <td class="text-center align-middle p-4">
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-secondary" type="button" (click)="updateQuantity(product.cartKey, product, product.quantity - 1)" [disabled]="product.quantity <= 1">-</button>
+                                        <input type="text" class="form-control text-center" [(ngModel)]="product.quantity" pattern="[0-9]*" disabled>
+                                        <button class="btn btn-outline-secondary" type="button" (click)="updateQuantity(product.cartKey, product, product.quantity + 1)">+</button>
+                                    </div>
+                                </td>                                                                                                
+                                <td class="text-right font-weight-semibold align-middle p-4">{{product.price * product.quantity}}</td>
+
+                                <td class="text-center align-middle p-4">
+                                    <button type="button" class="btn btn-sm btn-danger" (click)="removeFromCart(product.cartKey, product)">Remove</button>
+                                </td>
+                                
+                            </tr>
+                        <!-- end for loop -->
+                    </tbody>
+                </table>             
+                </div>
+            </div>
+            <h2 class="text-center" *ngIf="cartEmpty">Your cart is empty</h2>
+                <div class="mt-5" *ngIf="cartSpace">
+                    <div class="emptyspace"></div>
+                </div>
+    </div>
+<app-footer></app-footer>
