@@ -10,7 +10,10 @@ This project was generated with Angular CLI version 15.2.4. and it incorporates 
 - RxJS
 - TypeScript, HTML, CSS with Bootstrap
 
-### Setup and Installation
+## Firebase Hosted Version
+- The project is live here: https://project1-3cbec.web.app/
+
+### Setup and Installation on Local Machine
 
 - Clone the repo: Use git clone https://github.com/mattsankner/EcommerceWebApp-Angular-Firebase.git to clone the project repository to your local machine.
 - Navigate to the project directory: cd EcommerceWebApp-Angular-Firebase
