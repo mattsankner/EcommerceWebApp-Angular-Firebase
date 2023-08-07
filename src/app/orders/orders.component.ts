@@ -27,6 +27,5 @@ export class OrdersComponent {
     this.orderId += 1;
     return this.orderId;
   }
-
   totalPrice:number = 0;
 }

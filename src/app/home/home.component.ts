@@ -38,7 +38,6 @@ export class HomeComponent{
     //then update CartFull if isAdded true to enable cart button
     for (let i = 0; i < this.compareProducts.length; i++){
       if (this.compareProducts[i].isAdded == true){
-        console.log("cart full")
         this.cartFull = true;
       }
     } 
@@ -57,16 +56,12 @@ export class HomeComponent{
 success: Record<number, boolean> = {};  
 
 addToCart(product: any){
-
   //set cart reference
   const itemRef = this.db.list('/cart');
-
   //up quantity in cart  
   product.quantity += 1;
-
   //set isAdded to true 
   product.isAdded = true; 
-
   itemRef.push(product).then((ref) => {
   // Set the state of the product in Firebase after it has been added to the cart
     this.db.object(`/cart/${ref.key}/isAdded`).set(true);
