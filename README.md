@@ -1,4 +1,4 @@
-# Angular-Firebase E-commerce Web App
+# E-commerce Web App
 
 ## Summary
 This project is an e-commerce web application, inspired by and based on the real-world website, HockeyMonkey.
