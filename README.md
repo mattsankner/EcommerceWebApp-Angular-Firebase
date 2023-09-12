@@ -1,4 +1,4 @@
-# E-commerce Web App
+# E-Commerce Ice Hockey Equipment Web App 
 
 ## Summary
 This project is an e-commerce web application, inspired by and based on the real-world website, HockeyMonkey.
