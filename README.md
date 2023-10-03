@@ -8,6 +8,7 @@ The application allows users to browse products, add items to their shopping car
 This project was generated with Angular CLI version 15.2.4. and it incorporates a wide range of technologies, such as:
 - Angular
 - Firebase (Authentication, Real-time Database, Hosting)
+- Node.JS
 - RxJS
 - TypeScript, HTML, CSS with Bootstrap
 
