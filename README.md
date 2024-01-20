@@ -14,6 +14,7 @@ This project was generated with Angular CLI version 15.2.4. and it incorporates 
 
 ## Firebase Hosted Version
 - The project is hosted live here: https://project1-3cbec.web.app/
+- ![Screenshot of my app](/assets/appscreenshot.jpeg)
 
 ## Setup and Installation on Local Machine
 
